@@ -70,7 +70,7 @@ int main(int argc, char *argv[])
         {
             DrawRectangle(0, 0, WIDTH, HEIGHT, Fade(WHITE, 0.8f));
             DrawText(youLoose, WIDTH / 2 - (MeasureText(youLoose, 20) / 2), HEIGHT / 2 - 10, 20, DARKGRAY);
-            DrawText(pressRToRestart, WIDTH / 2 - (MeasureText(pressRToRestart, 20) / 2), 300, 20, DARKGRAY);
+            DrawText(pressRToRestart, WIDTH / 2 - (MeasureText(pressRToRestart, 20) / 2), HEIGHT/2 + 100, 20, DARKGRAY);
         }
 
         if (state == WIN)
@@ -78,6 +78,7 @@ int main(int argc, char *argv[])
 
             DrawRectangle(0, 0, WIDTH, HEIGHT, Fade(WHITE, 0.8f));
             DrawText(youWin, WIDTH / 2 - (MeasureText(youWin, 20) / 2), HEIGHT / 2 - 10, 20, DARKGRAY);
+            DrawText(pressRToRestart, WIDTH / 2 - (MeasureText(pressRToRestart, 20) / 2), HEIGHT/2 + 100, 20, DARKGRAY);
         }
 
         EndDrawing();
@@ -254,4 +255,5 @@ void GameInit()
 {
     GridInit();
     state = PLAYING;
+    tilesRevealed = 0;
 }
